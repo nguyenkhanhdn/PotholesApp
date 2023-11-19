@@ -3,12 +3,21 @@
 @{
     ViewData["Title"] = "Details";
 }
+<section id="featured" class="featured">
+    <div class="container">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
 
-<h1>Details</h1>
+                <ol>
+                    <li><a href="~/Home">Trang chủ</a></li>
+                    <li>Quản lý đường hư hỏng</li>
+                </ol>
+                <h2>Thông tin đường hư hỏng</h2>
 
-<div>
-    <h4>Hole</h4>
-    <hr />
+            </div>
+        </section><!-- End Breadcrumbs -->
+
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Latitude)
@@ -41,8 +50,10 @@
             @Html.DisplayFor(model => model.DetectDate)
         </dd>
     </dl>
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+
+</section>
