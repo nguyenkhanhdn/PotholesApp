@@ -93,9 +93,9 @@ namespace PotholesApp.Controllers
             }
             return predictResult; //Hàm trả về là nhãn: huhai, xuocnhe, binh thuong
         }
-        //private string conString = "Server=tcp:khanhn.database.windows.net,1433;Initial Catalog=ehandbook;Persist Security Info=False;User ID=khanhn;Password= Abc123!@#;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        private string conString = "Server=tcp:khanhn.database.windows.net,1433;Initial Catalog=ehandbook;Persist Security Info=False;User ID=khanhn;Password= Abc123!@#;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
-        string conString = @"server=(local)\SQLExpress;Database=PotholeDetectorApp;uid=sa;pwd=123456";
+        //string conString = @"server=(local)\SQLExpress;Database=PotholeDetectorApp;uid=sa;pwd=123456";
         public string AddPothole(
         string latitude,
         string longitude,
