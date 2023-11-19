@@ -1,9 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Báo cáo đường hư hỏng";
 }
+
+
+<!-- ======= Featured Section ======= -->
+<section id="featured" class="featured">
+    <div class="container">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+                <ol>
+                    <li><a href="~/Home">Trang chủ</a></li>
+                    <li>Báo cáo hư hỏng đường bộ</li>
+                </ol>
+                <h2>Báo cáo hư hỏng đường bộ</h2>
+
+            </div>
+        </section><!-- End Breadcrumbs -->
+
 <h1>Báo cáo đường hư hỏng</h1>
 
-<form action="/Home/Upload" method="post" enctype="multipart/form-data">
+<form action="/Home/Report" method="post" enctype="multipart/form-data">
     <div class="row mb-3">
         <label for="inputEmail3" class="col-sm-3 col-form-label">Chọn ảnh</label>
         <div class="col-sm-9">
@@ -31,7 +48,8 @@
         </div>
     }
 </form>
-
+    </div>
+</section>
 
 @section Scripts{
     <Script type="text/javascript">

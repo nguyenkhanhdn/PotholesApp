@@ -1,0 +1,75 @@
+﻿@model IEnumerable<PotholesApp.Models.Hole>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .inline-img{
+        width:100px;height:auto;
+    }
+</style>
+<p>
+    <a asp-action="Create">Quản lý đường hư hỏng</a>
+</p>
+<table class="table table-bordered display" id="holes">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Longitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Img)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DetectDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Longitude)
+            </td>
+            <td>
+                
+                <a href="@item.Location" target="_blank">Vị trí bản đồ</a>
+            </td>
+            <td>
+                    <img class="inline-img" src="/@item.Img" />
+                @*@Html.DisplayFor(modelItem => item.Img)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DetectDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            
+            var data_table = $('#holes').DataTable();
+            data_table.order([5, 'desc']).draw();
+        });
+
+    </script>
+}

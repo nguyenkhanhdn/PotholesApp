@@ -1,48 +1,118 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row">
-    <div class="col-lg-12 col-md-12">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-container">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background-image: url('/img/slide01.jpg')">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown"><span>Phát hiện và cảnh báo hư hỏng đường bộ ...</span></h2>
+                            <a target="_blank" href="https://vietnamnet.vn/sat-lo-dat-da-o-lam-dong-vui-lap-2-vo-chong-1-nguoi-chet-2155954.html" class="btn-get-started animate__animated animate__fadeInUp">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item" style="background-image: url('/img/slide02.jpg')">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated fanimate__adeInDown"><span>Phát hiện và cảnh báo hư hỏng đường bộ ...</span></h2>
+                            <a target="_blank" href="https://vietnamnet.vn/sat-lo-dat-da-o-lam-dong-vui-lap-2-vo-chong-1-nguoi-chet-2155954.html" class="btn-get-started animate__animated animate__fadeInUp">Chi tiết</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="background-image: url('/img/slide03.jpg')">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown"><span>Phát hiện và cảnh báo hư hỏng đường bộ ...</span></h2>
+                            <a target="_blank" href="https://vietnamnet.vn/sat-lo-dat-da-o-lam-dong-vui-lap-2-vo-chong-1-nguoi-chet-2155954.html" class="btn-get-started animate__animated animate__fadeInUp">Chi tiết</a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+                </a>
+
+                <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+                </a>
+
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="~/img/slide01.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Loại 1: đường hư hại, ổ gà ổ voi</h5>
-                        <p>Đường hư hại, có nhiều ổ gà ổ voi</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="~/img/slide02.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Loại 2: đường xước nhẹ</h5>
-                        <p>Mặt đường xây xước nhẹ</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="~/img/slide03.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Loại 3: đường bình thường</h5>
-                        <p>Mặt đường bình thường, giao thông an toàn</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
 
-        
+    </div>    
+</section><!-- End Hero -->
+<!-- ======= Featured Section ======= -->
+<section id="featured" class="featured">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="icon-box">
+                    <i class="bi bi-card-checklist"></i>
+                    <h3><a href="~/home/cause">Mục đích nghiên cứu</a></h3>
+                    <p>
+                        Tìm hiểu các thiết bị hỗ trợ, thiết bị phát hiện và cảnh báo khi gặp phải các ổ gà từ đó đánh giá phân loại mức độ hư hỏng sau đó lưu dữ liệu
+                    </p>
+                    <p>
+                        Dữ liệu đó sẽ được những cơ quan quản lý, bảo trì đường xem từ đó đưa ra các phương án kịp thời giúp người dân tránh né các tai nạn đáng tiếc.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="icon-box">
+                    <i class="bi bi-bar-chart"></i>
+                    <h3><a href="~/home/cause">Tính mới của đề tài</a></h3>
+                    <p>
+                        Sử dụng camera để có thể quan sát và đưa ra chẩn đoản về tình trạng của con đường giúp cho người dùng nắm bắt được mức độ hư hại của con đường để có thể đưa ra biện pháp hợp lý, tránh gây tai nạn giao thông.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-4 mt-lg-0">
+                <div class="icon-box">
+                    <i class="bi bi-binoculars"></i>
+                    <h3><a href="~/home/cause"> Tính thực tiễn của đề tài</a></h3>
+                    <ul>
+                        <li>
+                            <p>
+                                Đề tài có tính thực tiễn cao, dễ dàng áp dụng trên các phương tiện công cộng.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Dễ dàng lắp đặt: Việc lắp đặt hệ thống vô cùng dễ dàng; tất cả các module chức năng đều được thiết lập chế độ cắm-và-chạy giúp người dùng dễ thao tác và sử dụng.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Chi phí và giá thành thấp.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Đặc biệt, người dùng có thể nắm bắt tình trạng của các con đường
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
+</section><!-- End Featured Section -->

@@ -1,4 +1,8 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<PotholesApp.Models.PotholeDetectorAppContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PotholesAppContext") ?? throw new InvalidOperationException("Connection string 'PotholesAppContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

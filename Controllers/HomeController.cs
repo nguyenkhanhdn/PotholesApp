@@ -28,7 +28,7 @@ namespace PotholesApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Upload(IFormFile fileUpload)
+        public ActionResult Upload(string map, IFormFile fileUpload)
         {
             try
             {
@@ -36,11 +36,23 @@ namespace PotholesApp.Controllers
                 //Get url To Save
                 string SavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
 
+                string relativeImg2 = Path.Combine("uploads", fileName);
+
                 using (var stream = new FileStream(SavePath, FileMode.Create))
                 {
                     fileUpload.CopyTo(stream);
                 }
                 var result = Predict(SavePath);
+
+                if (result == "huhai")
+                {
+                    var data = map.Split(';');
+                    var lati = data[0];
+                    var lng = data[1];
+                    var loc = String.Format("https://maps.google.com/?q={0},{1}", lati, lng);
+
+                    AddPothole(lati, lng, loc, relativeImg2);
+                }
                 ViewBag.Result = result;
             }
             catch (Exception ex)
@@ -142,8 +154,43 @@ namespace PotholesApp.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult Problem()
+        {
+            return View();
+        }
+        [HttpGet]
         public ActionResult Report()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Report(string map, IFormFile fileUpload)
+        {
+            try
+            {
+                var fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + fileUpload.FileName;
+                //Get url To Save
+                string SavePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
+
+                string relativeImg2 = Path.Combine("uploads", fileName);
+
+                using (var stream = new FileStream(SavePath, FileMode.Create))
+                {
+                    fileUpload.CopyTo(stream);
+                }
+                var data = map.Split(';');
+                var lati = data[0];
+                var lng = data[1];
+                var loc = String.Format("https://maps.google.com/?q={0},{1}", lati, lng);
+
+                AddPothole(lati, lng, loc, relativeImg2);
+                
+                ViewBag.Result = "Báo cáo thành công, cảm ơn bạn đã dành thời gian!";
+            }
+            catch (Exception ex)
+            {
+            }
             return View();
         }
         public IActionResult Privacy()
