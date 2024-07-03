@@ -41,9 +41,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Location)
             </th>
-            <th>
+           @* <th>
                 @Html.DisplayNameFor(model => model.Img)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.DetectDate)
             </th>
@@ -63,10 +63,10 @@
                 
                 <a href="@item.Location" target="_blank">Vị trí bản đồ</a>
             </td>
-            <td>
+           @* <td>
                     <img class="inline-img" src="/@item.Img" />
-                @*@Html.DisplayFor(modelItem => item.Img)*@
-            </td>
+               @Html.DisplayFor(modelItem => item.Img)
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.DetectDate)
             </td>
